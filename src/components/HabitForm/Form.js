@@ -1,13 +1,23 @@
+// importing required libraries
 import React, { useRef } from "react";
 import store from "../../store/store";
 import { useNavigate } from "react-router-dom";
+
+// improting required files
 import Class from "./Form.module.css";
 import { addingHabit } from "../../store/actions";
 import { Store } from "react-notifications-component";
+
+// creating up form component for adding new habits
 const Form = () => {
+  // useing ref for getting input from user
   const habitRef = useRef();
   const categoryRef = useRef();
+
+  // using useNavigate hook for redirecting
   const navigation = useNavigate();
+
+  // creating up a function for adding up a habit
   function addHabit(e) {
     e.preventDefault();
     const data = {
@@ -62,4 +72,5 @@ const Form = () => {
   );
 };
 
+// exporting the form component by default
 export default Form;

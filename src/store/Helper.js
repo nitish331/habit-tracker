@@ -1,3 +1,4 @@
+// crealting a function for format the date in mm/dd/yy
 function getFormattedDate(date) {
   let year = date.getFullYear();
   let month = (1 + date.getMonth()).toString().padStart(2, "0");
@@ -6,6 +7,7 @@ function getFormattedDate(date) {
   return month + "/" + day + "/" + year;
 }
 
+// creating a function for creating a week array for habit
 export function createWeek(currDate) {
   const week = [];
   let days = [
@@ -32,6 +34,7 @@ export function createWeek(currDate) {
   return week;
 }
 
+// creating a function for updating a habit
 export function updateHabit(habit) {
   const lastIndex = habit.week.length - 1;
   let date1 = new Date();
@@ -42,8 +45,6 @@ export function updateHabit(habit) {
   const daysLeft = parseInt(
     (date1.getTime() - lastDate.getTime()) / (1000 * 3600 * 24)
   );
-
-  console.log(daysLeft);
   let days = [
     "Sunday",
     "Monday",
@@ -66,6 +67,7 @@ export function updateHabit(habit) {
   }
 }
 
+// creating a function for updating all the habits
 export function updateHabits(state) {
   state.forEach(updateHabit);
   return state;

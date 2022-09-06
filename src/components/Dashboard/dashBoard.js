@@ -1,14 +1,26 @@
+// importing required libraries
 import React, { useEffect, useState } from "react";
+
+// importing required filea and functions
 import Habit from "../Habit/Habit";
 import store from "../../store/store";
 import Class from "./dashBoard.module.css";
 import { updatingHabits } from "../../store/actions";
+
+// creating a dashboard functions
 const DashBoard = () => {
+  // setting up state for habits
   const [habits, setHabits] = useState([]);
+
   useEffect(() => {
+    // dispatching an action for updating all habits
     store.dispatch(updatingHabits());
+
+    // setting up the state of habits
     setHabits(store.getState());
   }, []);
+
+  // function for rerendering the dashboard componenet
   function reRender() {
     setHabits(store.getState());
   }
@@ -28,4 +40,5 @@ const DashBoard = () => {
   );
 };
 
+// exporting component by default
 export default DashBoard;

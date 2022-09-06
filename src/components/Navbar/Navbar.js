@@ -1,7 +1,11 @@
+// importing required libraries
 import React from "react";
 import { Link } from "react-router-dom";
+
+// importing css files
 import Class from "./Navbar.module.css";
 
+// creating a Navbar component
 const Navbar = () => {
   return (
     <div className={Class.nav}>
@@ -18,4 +22,5 @@ const Navbar = () => {
   );
 };
 
+// exporiting Navbar component
 export default Navbar;

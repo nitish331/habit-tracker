@@ -1,10 +1,18 @@
+// importing required libraries
 import React, { useEffect, useState } from "react";
+
+// importing required files
 import Class from "./showWeek.module.css";
 import store from "../../store/store";
 import { changingStatus } from "../../store/actions";
+
+// creating a week component
 const ShowWeek = (props) => {
+  // setting up state for done or not-done
   const [done, setDone] = useState(false);
   const [notDone, setNotDone] = useState(false);
+
+  // creating function for  done handler
   function doneHandler() {
     if (done) {
       setDone(false);
@@ -15,6 +23,7 @@ const ShowWeek = (props) => {
       store.dispatch(changingStatus(props.habit, props.index, "done"));
     }
   }
+  // creating a functions for not-done state
   function notDoneHandler() {
     if (notDone) {
       setNotDone(false);
@@ -63,4 +72,5 @@ const ShowWeek = (props) => {
   );
 };
 
+// exporing up a week component by default
 export default ShowWeek;
